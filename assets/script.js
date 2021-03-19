@@ -53,8 +53,16 @@ function writePassword() {
   // Check to make sure the password length is valid
   if (passwordLength < 8 || passwordLength > 128 ) {
     alert("Password must be between 8 and 128 characters.");
-    return 0;
-  } //TODO: Create elseif statement to check for non-numeric answers
+      return 0;
+  } else if (isNaN(passwordLength)) {
+    alert("The length of the password must be a number.");
+      return 0;
+  }
+
+ 
+  // } else if (passwordLength.matches(/[^$,.\d]/)){
+  //   alert("Password length must be between 8 & 128 characters.");
+  // }
 
   let acceptLowercase = confirm("Would you like your password to contain lowercase letters? \n \n Cancel = No \n Ok =  Yes");
 
